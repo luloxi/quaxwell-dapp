@@ -111,6 +111,16 @@ Quadratic voting DAO dapp for choosing a new Moderator
 1. Open a terminal on `backend` folder
 2. Open [http://localhost:3001/proposals](http://localhost:3001/proposals) on your browser to make a call and view the result
 
+## Deploying to Fleek
+
+1. Select to deploy from your repo, then choose the **Next** type
+2. Input this **parameters**:
+
+- Docker image name: `node:lts`
+- Build command: `yarn`
+- Base directory: `backend`
+- Publish directory: `/`
+
 # Frontend
 
 ## Setting up interface
@@ -122,9 +132,9 @@ Quadratic voting DAO dapp for choosing a new Moderator
 
 ## Connecting to different chains
 
-1. Change`/pages/_app.js` jsonRpcUrl rpc value to [a valid RPC URL)](https://www.alchemy.com/overviews/private-rpc-endpoint)
-2. Change`../backend/index.js` getDefaultProvider value to [a valid RPC URL)](https://www.alchemy.com/overviews/private-rpc-endpoint)
-3. Change `/constants/CurrentChain.json` default value to your desired chain name.
+1. Change `/constants/CurrentChain.json` default value to your desired chain name.
+2. Change`/pages/_app.js` jsonRpcUrl rpc value to [a valid RPC URL)](https://www.alchemy.com/overviews/private-rpc-endpoint)
+3. Change`../backend/index.js` getDefaultProvider value to [a valid RPC URL)](https://www.alchemy.com/overviews/private-rpc-endpoint)
 
 - Available chain names are `hardhat` `mumbai` `goerli` and `mainnet`
 - Default value `hardhat` is for local testing
