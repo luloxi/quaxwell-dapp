@@ -18,7 +18,7 @@ export function Header() {
       <GridItem colSpan={1} />
       <GridItem colSpan={3}>
         <Heading fontWeight={"400"} as="h1" size="md" noOfLines={1} fontFamily={"Langar"}>
-          Quaxly DAO
+          Quaxwell DAO
         </Heading>
       </GridItem>
       <GridItem colSpan={2}></GridItem>
