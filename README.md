@@ -2,10 +2,8 @@
 
 Quadratic voting DAO dapp for choosing a new Moderator
 
-- [DApp conditions](https://lulox.notion.site/Quaxly-dApp-conditions-645e66fdf6744161ae5ff97e854c175e) to be met
 - [Ongoing changes](https://lulox.notion.site/Ongoing-changes-91a60bc9f6c449e6a1f163a380d575b1) next to be implemented
-- Inspired by [ferrodri's quadratic-voting-dao](https://github.com/ferrodri/quadratic-voting-dao)
-- Evolved from [Quaxly](https://github.com/luloxi/quaxly-dapp) (it ate too much noodles (node_modules))
+- [dApp conditions](https://lulox.notion.site/Quaxly-dApp-conditions-645e66fdf6744161ae5ff97e854c175e) to be met
 
 # Index
 
@@ -23,6 +21,7 @@ Quadratic voting DAO dapp for choosing a new Moderator
   - [Deploying to Fleek](#deploying-to-fleek-1)
 - [File locations](#file-locations)
 - [Troubleshooting](#troubleshooting)
+- [Previous versions](#previous-versions)
 
 # Quick setup
 
@@ -204,3 +203,8 @@ If you get this error when trying to use your wallet again after using it for in
 ### (Bonus) Enable hh shorthand
 
 `npm install --global hardhat-shorthand` to use commands like `hh node` instead of `yarn hardhat node`
+
+# Previous versions:
+
+- **Base:** Unofficial fork from [ferrodri's quadratic-voting-dao](https://github.com/ferrodri/quadratic-voting-dao)
+- **First stage:** [Quaxly](https://github.com/luloxi/quaxly-dapp) (evolved because it ate too much noodles (node_modules))
