@@ -16,10 +16,11 @@ Quadratic voting DAO dapp for choosing a new Moderator
 - [Backend](#backend)
   - [Setting up backend](#setting-up-backend)
   - [Testing backend](#testing-backend)
+  - [Deploying to Fleek](#deploying-to-fleek)
 - [Frontend](#frontend)
   - [Setting up interface](#setting-up-interface)
   - [Connecting to different chains](#connecting-to-different-chains)
-  - [Deploying to Fleek](#deploying-to-fleek)
+  - [Deploying to Fleek](#deploying-to-fleek-1)
 - [File locations](#file-locations)
 - [Troubleshooting](#troubleshooting)
 
@@ -191,13 +192,14 @@ If you get this error when trying to use your wallet again after using it for in
 
 ### Don't have yarn
 
-- Install the [LTS version of Node](https://nodejs.org/en/download/)
-- Open a terminal and run `npm install --global yarn`
+1. Install the [LTS version of Node](https://nodejs.org/en/download/)
+2. Open a terminal and run `npm install --global yarn`
 
 ### Don't have git
 
-- Open a terminal and run `curl blablabla | bash`
-- You can also install it with an installer from [here](https://git.com/install/)
+- (Windows only) Install it with [an executable installer](https://git-scm.com/download/win)
+- (Mac only) Install with [a command](https://git-scm.com/download/mac)
+- (Linux only) Install with [a command for your distribution](https://git-scm.com/download/linux)
 
 ### (Bonus) Enable hh shorthand
 
