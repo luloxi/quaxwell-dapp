@@ -42,8 +42,8 @@ const getCalldata = (name, email, moderatorAddress) => {
 export function ProposeForm() {
   /* Replace with an automatic solution */
   let currentChain = ChainList[CurrentChain["default"]]
-  const GovernorContractAddress = governorContractAddress[currentChain][0]
-  const DAOModeratorsAddress = daoModeratorsAddress[currentChain][0]
+  const GovernorContractAddress = governorContractAddress[currentChain][currentChain.length - 1]
+  const DAOModeratorsAddress = daoModeratorsAddress[currentChain][currentChain.length - 1]
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const toast = useToast()

@@ -6,7 +6,8 @@ import { GovernorContractABI, governorContractAddress, CurrentChain, ChainList }
 export function AvailableVotingPower({ children }) {
   /* Replace with an automatic solution */
   let currentChain = ChainList[CurrentChain["default"]]
-  const GovernorContractAddress = governorContractAddress[currentChain][0]
+  const GovernorContractAddresses = governorContractAddress[currentChain]
+  const GovernorContractAddress = GovernorContractAddresses[GovernorContractAddresses.length - 1]
 
   const [isLoading, setIsLoading] = useState(true)
   const [availableVoting, setAvailableVoting] = useState(0)

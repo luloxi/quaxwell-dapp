@@ -37,8 +37,10 @@ import {
 export function Proposal({ availableVoting = 0, hasVoted = false, proposal, onlySuccessful }) {
   /* Replace with an automatic solution */
   let currentChain = ChainList[CurrentChain["default"]]
-  const GovernorContractAddress = governorContractAddress[currentChain][0]
-  const DAOModeratorsAddress = daoModeratorsAddress[currentChain][0]
+  const GovernorContractAddresses = governorContractAddress[currentChain]
+  const DAOModeratorsAddresses = daoModeratorsAddress[currentChain]
+  const GovernorContractAddress = GovernorContractAddresses[GovernorContractAddresses.length - 1]
+  const DAOModeratorsAddress = DAOModeratorsAddresses[DAOModeratorsAddresses.length - 1]
 
   const { isConnected } = useAccount()
   const [justVoted, setJustVoted] = useState(false)

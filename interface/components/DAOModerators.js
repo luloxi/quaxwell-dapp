@@ -6,7 +6,8 @@ import { Heading, Grid, GridItem } from "@chakra-ui/react"
 export function DAOModerators() {
   /* Replace with an automatic solution */
   let currentChain = ChainList[CurrentChain["default"]]
-  const DAOModeratorsAddress = daoModeratorsAddress[currentChain][0]
+  const DAOModeratorsAddresses = daoModeratorsAddress[currentChain]
+  const DAOModeratorsAddress = DAOModeratorsAddresses[DAOModeratorsAddresses.length - 1]
 
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState([])

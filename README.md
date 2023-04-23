@@ -25,6 +25,10 @@ Quadratic voting DAO dapp for choosing a new Moderator
 
 # Quick setup
 
+**Clone the repo:**
+
+1. Open a terminal an run `git clone https://github.com/luloxi/quaxwell-dapp.git`
+
 **Smart contracts**
 
 1. Open a terminal on `hardhat` folder
@@ -90,9 +94,9 @@ Quadratic voting DAO dapp for choosing a new Moderator
 
 ### Deploy commands
 
-- Mainnet: `yarn hardhat run scripts/deployAll --network mainnet`
-- Goerli: `yarn hardhat run scripts/deployAll --network goerli`
-- Mumbai: `yarn hardhat run scripts/deployAll --network mumbai`
+- Mainnet: `yarn hardhat run scripts/deployAll.js --network mainnet`
+- Goerli: `yarn hardhat run scripts/deployAll.js --network goerli`
+- Mumbai: `yarn hardhat run scripts/deployAll.js --network mumbai`
 
 # Backend
 
@@ -118,7 +122,9 @@ Quadratic voting DAO dapp for choosing a new Moderator
 
 ## Connecting to different chains
 
-Change `/constants/CurrentChain.json` default value to your desired chain name.
+1. Change`/pages/_app.js` jsonRpcUrl rpc value to [a valid RPC URL)](https://www.alchemy.com/overviews/private-rpc-endpoint)
+2. Change`../backend/index.js` getDefaultProvider value to [a valid RPC URL)](https://www.alchemy.com/overviews/private-rpc-endpoint)
+3. Change `/constants/CurrentChain.json` default value to your desired chain name.
 
 - Available chain names are `hardhat` `mumbai` `goerli` and `mainnet`
 - Default value `hardhat` is for local testing
@@ -175,8 +181,13 @@ If you get this error when trying to use your wallet again after using it for in
 
 ### Don't have yarn
 
-- Just enter `npm install --global yarn` on your console.
-- Don't have NPM either? [Get the LTS version!](https://nodejs.org/en/download/)
+- Install the [LTS version of Node](https://nodejs.org/en/download/)
+- Open a terminal and run `npm install --global yarn`
+
+### Don't have git
+
+- Open a terminal and run `curl blablabla | bash`
+- You can also install it with an installer from [here](https://git.com/install/)
 
 ### (Bonus) Enable hh shorthand
 

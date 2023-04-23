@@ -5,8 +5,9 @@ import { GovernanceTokenABI, governanceTokenAddress, CurrentChain, ChainList } f
 
 export function TotalVotingPower() {
   /* Replace with an automatic solution */
-  let currentChain = ChainList[CurrentChain["default"]]
-  const GovernanceTokenAddress = governanceTokenAddress[currentChain][0]
+  const currentChain = ChainList[CurrentChain["default"]]
+  const GovernanceTokenAddresses = governanceTokenAddress[currentChain]
+  const GovernanceTokenAddress = GovernanceTokenAddresses[GovernanceTokenAddresses.length - 1]
 
   const { address } = useAccount()
   const [isLoading, setIsLoading] = useState(true)
