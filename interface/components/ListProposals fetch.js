@@ -11,11 +11,11 @@ export function ListProposals({ onlyActive, onlySuccessful, availableVoting }) {
 
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState("")
-  const [proposals, setProposals] = useState([])
-  const [votingPeriod, setVotingPeriod] = useState(0)
-
   const { isConnected } = useAccount()
   const provider = useProvider()
+  const { data: blockNumber } = useBlockNumber({ watch: true })
+  const [proposals, setProposals] = useState([])
+  const [votingPeriod, setVotingPeriod] = useState(0)
 
   useContractRead({
     addressOrName: GovernorContractAddress,
@@ -30,55 +30,19 @@ export function ListProposals({ onlyActive, onlySuccessful, availableVoting }) {
   })
 
   useEffect(() => {
-    const governorContract = new ethers.Contract(
-      GovernorContractAddress,
-      GovernorContractABI,
-      provider
-    )
-    let eventFilter = governorContract.filters.ProposalCreated()
-
-    const { data: blockNumber } = useBlockNumber({ watch: true })
-    const blockMinusVotingPeriod = blockNumber - votingPeriod
-
-    provider
-      .getLogs({
-        ...eventFilter,
-        fromBlock:
-          onlyActive && votingPeriod !== 0
-            ? blockMinusVotingPeriod > 0
-              ? blockMinusVotingPeriod
-              : 0
-            : "earliest",
-        toBlock: "latest",
-      })
-      .then((logs) => {
+    // Fetch data from external API hosted on port 3001
+    fetch("http://localhost:3001/proposals")
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the state with the fetched data
+        setProposals(data)
         setIsLoading(false)
-        let proposals = logs.filter((log) => {
-          const deadline = governorContract.interface.parseLog(log).args[7].toNumber()
-          // If onlyActive, only show proposals where deadline is greater than blockNumber
-          // Else, show everything
-          return onlyActive ? deadline >= blockNumber : true
-        })
-
-        proposals = proposals.map((log) => {
-          const [proposalId, , , , , calldatas, snapshot, deadline, description] =
-            governorContract.interface.parseLog(log).args
-
-          return {
-            calldatas,
-            deadline,
-            description,
-            proposalId,
-            snapshot,
-          }
-        })
-        setProposals(proposals)
       })
       .catch((error) => {
-        setIsLoading(false)
         setError(error)
+        setIsLoading(false)
       })
-  }, [blockNumber, onlyActive, provider, votingPeriod])
+  }, [])
 
   return (
     <>
