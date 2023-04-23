@@ -17,7 +17,9 @@ const provider = ethers.getDefaultProvider(
 
 /* Replace with an automatic solution */
 let currentChain = ChainList[CurrentChain["default"]];
-const GovernorContractAddress = governorContractAddress[currentChain][0];
+const GovernorContractAddresses = governorContractAddress[currentChain];
+const GovernorContractAddress =
+  GovernorContractAddresses[GovernorContractAddresses.length - 1];
 
 // Create contract instance
 const contract = new ethers.Contract(
