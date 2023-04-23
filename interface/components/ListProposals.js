@@ -7,7 +7,8 @@ import { GovernorContractABI, governorContractAddress, CurrentChain, ChainList }
 export function ListProposals({ onlyActive, onlySuccessful, availableVoting }) {
   /* Replace with an automatic solution */
   let currentChain = ChainList[CurrentChain["default"]]
-  const GovernorContractAddress = governorContractAddress[currentChain][currentChain.length - 1]
+  const GovernorContractAddresses = governorContractAddress[currentChain]
+  const GovernorContractAddress = GovernorContractAddresses[GovernorContractAddresses.length - 1]
 
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState("")

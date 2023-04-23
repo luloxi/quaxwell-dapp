@@ -6,7 +6,7 @@ import { GovernorContractABI, governorContractAddress, CurrentChain, ChainList }
 export function HasVoted({ children, proposalId }) {
   /* Replace with an automatic solution */
   let currentChain = ChainList[CurrentChain["default"]]
-  const GovernorContractAddresses = governanceTokenAddress[currentChain]
+  const GovernorContractAddresses = governorContractAddress[currentChain]
   const GovernorContractAddress = GovernorContractAddresses[GovernorContractAddresses.length - 1]
 
   const { address } = useAccount()

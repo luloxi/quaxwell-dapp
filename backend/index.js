@@ -10,10 +10,10 @@ const {
 } = require("../interface/constants");
 
 // To be updated with an Ethereum node URL for production
-// const provider = ethers.getDefaultProvider("http://localhost:8545"); // For local testing
 const provider = ethers.getDefaultProvider(
   "https://polygon-mumbai.g.alchemy.com/v2/n-dS9QE4hHURuOL2I222A7pVqer60TCf"
 );
+// const provider = ethers.getDefaultProvider("http://localhost:8545"); // For local testing
 
 /* Replace with an automatic solution */
 let currentChain = ChainList[CurrentChain["default"]];
