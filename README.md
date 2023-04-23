@@ -1,6 +1,6 @@
 # Quaxwell dApp
 
-Quadratic voting DAO on a full stack monorepo.
+Quadratic voting DAO dapp for choosing a new Moderator
 
 - [DApp conditions](https://lulox.notion.site/Quaxly-dApp-conditions-645e66fdf6744161ae5ff97e854c175e) to be met
 - [Ongoing changes](https://lulox.notion.site/Ongoing-changes-91a60bc9f6c449e6a1f163a380d575b1) next to be implemented
