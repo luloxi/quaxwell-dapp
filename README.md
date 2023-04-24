@@ -62,6 +62,7 @@ Quadratic voting DAO dapp for choosing a new Moderator
 
 ## Scripts
 
+1. Open `scripts/createProposal.js` in your code editor and complete the fields with your desired data for the proposal
 1. Run `yarn hardhat run scripts/createProposal.js` to create a proposal
 
 ## Deploying
