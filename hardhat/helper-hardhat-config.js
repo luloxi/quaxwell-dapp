@@ -1,13 +1,3 @@
-/* Variables for updating rainbowkit frontend */
-
-const developmentChains = ["hardhat", "localhost"]
-const daoModeratorsAddress = "../rainbowkit/constants/daoModeratorsAddress.json"
-const daoModeratorsABI = "../rainbowkit/constants/daoModeratorsABI.json"
-const governanceTokenAddress = "../rainbowkit/constants/governanceTokenAddress.json"
-const governanceTokenABI = "../rainbowkit/constants/governanceTokenABI.json"
-const governorContractAddress = "../rainbowkit/constants/governorContractAddress.json"
-const governorContractABI = "../rainbowkit/constants/governorContractABI.json"
-
 /* Variables for updating interface frontend */
 
 const DAOModeratorsAddress = "../interface/constants/daoModeratorsAddress.json"

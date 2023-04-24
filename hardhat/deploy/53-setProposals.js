@@ -41,13 +41,9 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
   const governorContract = await ethers.getContract("GovernorContract", deployer)
   const daoModerators = await ethers.getContract("DAOModerators", deployer)
-  const governanceToken = await ethers.getContract("GovernanceToken", deployer)
 
   // If on a development chain, continue
   if (developmentChains.includes(network.name)) {
-    log("Delegating voting power to self...")
-    await governanceToken.delegate(deployer)
-
     log("Creating sample proposals...")
     await createProposal(governorContract, daoModerators, 0)
     await createProposal(governorContract, daoModerators, 1)

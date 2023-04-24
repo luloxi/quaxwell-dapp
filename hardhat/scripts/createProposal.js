@@ -1,21 +1,17 @@
-const hre = require("hardhat")
+const { ethers } = require("hardhat")
 
 async function main() {
-  // Configure the arguments for the propose function
-  const targets = [
-    /* insert target addresses here */
-  ]
-  const values = [
-    /* insert values here */
-  ]
-  const calldatas = [10 /* Replace with custom calldata */]
-  const description = "Your proposal description here"
+  // Get the instance of the contracts
+  const governorContract = await ethers.getContract("GovernorContract")
+  const daoModerators = await ethers.getContract("DAOModerators")
 
-  // Get the instance of the contract
-  const contract = await hre.ethers.getContract("GovernorContract")
+  const targets = [daoModerators.address]
+  const values = [0]
+  const calldatas = [getCalldata(daoModerators, 0)]
+  const description = "Example proposal"
 
   // Call the propose function with the configured arguments
-  const proposalId = await contract.propose(targets, values, calldatas, description)
+  const proposalId = await governorContract.propose(targets, values, calldatas, description)
 
   console.log("Proposal created with ID:", proposalId.toString())
 }
