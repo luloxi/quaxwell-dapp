@@ -2,7 +2,7 @@
 
 Quadratic voting DAO dapp for choosing a new Moderator
 
-- [Ongoing changes](https://lulox.notion.site/Ongoing-changes-91a60bc9f6c449e6a1f163a380d575b1) next to be implemented
+- [Pending changes](https://lulox.notion.site/Quaxwell-8f1c755d004344818417ebbfd8ad76d3)
 - [dApp conditions](https://lulox.notion.site/Quaxly-dApp-conditions-645e66fdf6744161ae5ff97e854c175e) to be met
 
 # Index
